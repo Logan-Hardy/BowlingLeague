@@ -33,8 +33,9 @@ namespace BowlingLeague.Controllers
                     .OrderBy(b => b.TeamId)
                     .Skip((pageNum - 1) * pageSize)
                     .Take(pageSize)
+                    
+                    //These commands below allow us to use SQL to gather data
                     //.FromSqlRaw("SELECT * FROM Bowlers WHERE TeamID = 3")
-
                     //.FromSqlInterpolated($"SELECT * FROM Bowlers WHERE TeamID = {teamid} OR {teamid} IS NULL")
                     .ToList(),
 
@@ -43,8 +44,9 @@ namespace BowlingLeague.Controllers
                     .OrderBy(b => b.TeamId)
                     .Skip((pageNum - 1) * pageSize)
                     .Take(pageSize)
-                    //.FromSqlRaw("SELECT * FROM Bowlers WHERE TeamID = 3")
 
+                    //These commands below allow us to use SQL to gather data
+                    //.FromSqlRaw("SELECT * FROM Bowlers WHERE TeamID = 3")
                     //.FromSqlInterpolated($"SELECT * FROM Bowlers WHERE TeamID = {teamid} OR {teamid} IS NULL")
                     .ToList(),
 

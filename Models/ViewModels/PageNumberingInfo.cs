@@ -11,7 +11,7 @@ namespace BowlingLeague.Models.ViewModels
         public int CurrentPage { get; set; }
         public int TotalNumItems { get; set; }
 
-        //calculate the number of pages 
+        //calculate the number of pages (needs to be an integer) 
         public int NumPages => (int) (Math.Ceiling((decimal) (TotalNumItems / NumItemsPerPage)));
     }
 }

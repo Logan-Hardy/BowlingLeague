@@ -1,13 +1,18 @@
 ﻿@model IEnumerable<Teams>
 @*@model IndexViewModel*@
 
-<div>
-    <a asp-action="Index" asp-controller="Home" asp-route-teamid="">Home</a>
-    <br /> 
-    @foreach (var b in Model)
-    {
-        <a asp-action="Index" asp-controller="Home"
-           asp-route-teamid="@b.TeamId" asp-route-teamName="@b.TeamName">@b.TeamName</a>
-        <br />
-    }
+<div class="card">
+    <div class="m-3">
+        <!-- Display all teams -->
+        <a class="btn btn-block btn-outline-secondary"
+           asp-action="Index" asp-controller="Home" asp-route-teamid="">Home</a>
+
+        <!-- Team Names with links to display only that team when selected -->
+        @foreach (var b in Model)
+        {
+            <a class="btn btn-block @(b.TeamName == ViewBag.SelectedTeam ? "bg-selected" : "btn-outline-secondary")"
+               asp-action="Index" asp-controller="Home"
+               asp-route-teamid="@b.TeamId" asp-route-teamName="@b.TeamName">@b.TeamName</a>
+        }
+    </div>
 </div>

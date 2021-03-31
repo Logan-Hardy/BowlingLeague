@@ -17,6 +17,9 @@ namespace BowlingLeague.Components
 
         public IViewComponentResult Invoke()
         {
+            //set ViewBag to have slected team (used to highlight team name when selected) 
+            ViewBag.SelectedTeam = RouteData?.Values["TeamName"];
+
             return View(context.Teams
                .Distinct()
                .OrderBy(b => b.TeamName)

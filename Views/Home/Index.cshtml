@@ -4,21 +4,23 @@
 }
 
 @model IndexViewModel
+<!--Determine to display all teams if no team is selected or display team name of the selected team-->
 <div class="text-center">
-    @if (Model.Teams.Count() == 1)
-    {
-        <h1 class="display-4">The @Model.TeamName</h1>
-    }
     @if (Model.Teams.Count() != 1)
     {
         <h1 class="display-4">All Teams</h1>
     }
+    @if (Model.Teams.Count() == 1)
+    {
+        <h1 class="display-4">The @Model.TeamName</h1>
+    }
 </div>
 
+<!--Display Bowler information-->
 @foreach (var b in Model.Bowlers)
 {
 <div class="card my-4">
-    <h5 class="card-header text-center">Bowler Number: @b.BowlerId</h5>
+    <h5 class="card-header text-center bg-head">Bowler Number: @b.BowlerId</h5>
     <div class="card-body mb-0">
         <h6 class="m-0">@b.BowlerFirstName @b.BowlerMiddleInit @b.BowlerLastName</h6>
         <p class="m-0">@b.BowlerAddress</p>
@@ -28,7 +30,11 @@
 </div>
 }
 
+<!--Page links-->
 <div page-info="@Model.PageNumberingInfo"
-     page-url-teamname="@Model.TeamName">
+     page-url-teamname="@Model.TeamName" page-classes-enabled="true" page-class="btn"
+         page-class-normal="btn-outline-dark"
+         page-class-selected="bg-selected"
+         class="btn-group pull-right m-1">>
 
 </div>

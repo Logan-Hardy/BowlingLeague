@@ -53,6 +53,8 @@ namespace BowlingLeague
 
             app.UseEndpoints(endpoints =>
             {
+                //Endpoints 
+                //These control how the info is displayed in the url
                 endpoints.MapControllerRoute(
                     "teamtypeidnamepage",
                     "Team/{teamid}/{teamname}/{pageNum}",
