@@ -63,7 +63,7 @@ namespace BowlingLeague
                 endpoints.MapControllerRoute(
                     "teamtypeidname",
                     "Team/{teamid}/{teamname}",
-                    new { Controller = "Home", action = "Index" });
+                    new { Controller = "Home", action = "Index", pageNum = 1});
 
                 endpoints.MapControllerRoute(
                     "teamtypeid",

@@ -8,7 +8,7 @@ namespace BowlingLeague.Models.ViewModels
     public class PageNumberingInfo
     {
         public int NumItemsPerPage { get; set; }
-        public int CurrentPage { get; set; }
+        public int CurrentPage { get; set; } 
         public int TotalNumItems { get; set; }
 
         //calculate the number of pages (needs to be an integer) 

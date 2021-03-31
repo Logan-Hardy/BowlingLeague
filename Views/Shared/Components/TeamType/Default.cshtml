@@ -12,7 +12,7 @@
         {
             <a class="btn btn-block @(b.TeamName == ViewBag.SelectedTeam ? "bg-selected" : "btn-outline-secondary")"
                asp-action="Index" asp-controller="Home"
-               asp-route-teamid="@b.TeamId" asp-route-teamName="@b.TeamName">@b.TeamName</a>
+               asp-route-teamid="@b.TeamId" asp-route-teamName="@b.TeamName" asp-route-pagenum="1">@b.TeamName</a>
         }
     </div>
 </div>
